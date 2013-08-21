@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>vdDropdown</title>
+<style type="text/css">
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, hr, input, textarea, select, radio, a { margin: 0; padding: 0; outline:none; }
+*{margin:0; padding:0;}
+body{font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+a:link{text-decoration:none;}
+.wrapper{width:960px; margin:20px auto;}
+.pr{position:relative;}
+.btn {
+	-webkit-transition: background .25s linear;
+	-moz-transition: background .25s linear;
+	-o-transition: background .25s linear;
+	transition: background .25s linear; 
+	border: none; 
+	 background-color: #8A99A2; 
+	color: #fff; 
+	display:inline-block; 
+	cursor:pointer; padding: 5px 12px; line-height: 24px;
+}
+.btn:hover, .btn:focus { background-color: #535F66; color: #fff; }
+.btn:active { background-color: #a1a6a9; color: rgba(255, 255, 255, 0.75); }
+
+.dropmenu { background-clip: padding-box; background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.2); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); display: none; list-style: none outside none; min-width: 160px; position: absolute; z-index:100; }
+.dropmenu li { line-height: 24px; padding: 5px 10px; white-space: nowrap; cursor:pointer; }
+.dropmenu li.divider { background:#d8d8d8; height:2px; padding:0; margin:0 5px; }
+.dropmenu li:hover{background:#f3f3f3;}
+
+
+#section1{height:50px;}
+#section2{height:34px; padding:10px; width:300px; background:#f3f3f3; margin-left:500px;}
+#showOtherDiv{padding:10px; top:0; right:0;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	
+    <div id="section1" class="pr">
+        <a class="btn" href="javascript:void(0);" id="fbtn">Click Me</a>
+        <ul id="showDropMenu" class="dropmenu boxsize ln">
+            <li class="bgGrey">
+                <h3>John Doe</h3>
+                <p><a href="">john@doe.com </a></p>
+                
+            </li>
+            <li>Setting</li>
+            <li>Manage Admin</li>
+            <li>Logout</li>
+        </ul>
+    </div>
+
+
+	<div id="section2" class="pr">
+    	<a class="btn" href="javascript:void(0);" id="sbtn">Click Me too</a>
+        <div id="showOtherDiv" class="dropmenu">
+        	<h3>am a bad boy</h3>
+            <p>10 hands on workshops</p>
+            <p>24 informative presentations</p>
+            <p>Evening networking event</p>
+
+        </div>
+    </div>
+
+
+
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="vdDropdown.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(e) {
+	$('#fbtn').vdDropdown({
+		target : '#showDropMenu',
+		activation: 'click',
+		autoclose:true
+	});
+	$('#sbtn').vdDropdown({
+		target : '#showOtherDiv',
+		activation: 'click',
+		autoclose:false
+	});
+});
+</script>
+</body>
+</html>
